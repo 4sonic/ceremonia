@@ -1,0 +1,71 @@
+---
+title: Festival Ceremonia
+timezone: UTC
+collections:
+  line-up:
+    title: Line-up
+    output: true
+  artists:
+    title: artists
+    output: true
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: false
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: artists
+  values:
+    layout: event
+url:
+description:
+permalink: pretty
+exclude:
+- bower.json
+- package.json
+- config.codekit3
+- README*
+- LICENSE*
+- CHANGELOG*
+- node_modules
+- bower_components
+- ".gitignore"
+- assets/scss
+plugins:
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll-feed
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: false
+highlighter: rouge
+company: 
+date-text: 6 - 10 June 2018
+address: Km 52.5, Carretera Toluca Naucalpan
+email: info@festivaceremonia.com
+google_site_verification:
+analytics:
+logo: "/assets/img/logo.svg"
+per_page: 12
+date_format: "%b %d, %Y"
+future: true
+social:
+  facebook: https://www.facebook.com/bristolcomedygarden
+  instagram: https://www.instagram.com/bristolcomedygarden
+  twitter: https://twitter.com/comedygarden
+compress_html:
+  comments:
+  - "<!-- "
+  - " -->"
+  blanklines: true
+  profile: false

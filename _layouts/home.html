@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="grid-x align-middle align-center height-100" data-aos="fade-up">
+    <div class="small-shrink medium-10 cell text-center">
+      <h1 class="white secondary-font text-uppercase"></h1>
+    </div>
+  </div>
+
+  <div class="grid-x hero__arrow">
+    <div class="small-12 cell text-center" data-smooth-scroll>
+      <a href="#home-intro"><svg class="icon icon-arrow-down8"><use xlink:href="/assets/icons/symbol-defs.svg#icon-arrow-down8"></use></svg></a>
+    </div>
+  </div>
+
+  <video playsinline autoplay muted loop>
+    <source src="assets/videos/video.mp4" type="video/mp4">
+  </video>
+</section>
+
+
+<section class="index">
+
+
+
+<!-- Featured -->
+<div class="grid-x small-up-1 medium-up-2 large-up-4 xlarge-up-4 align-center home__featured">
+    {% for act in page.featured %}
+    <div class="cell">
+      <div class="excerpt">
+        <a href="/artists/{{act.url | slugify}}">
+
+          <div class="grid-x excerpt__title align-middle">
+            <div class="small-12 cell text-center text-lowercase">
+            <h3>{{ act.name }}</h3>
+           {% if act.is-sold-out == true %}
+          <div>Sold Out</div>
+          {% endif %}
+
+            </div>
+          </div>
+
+          <div class="excerpt__image">
+            <img src="{{act.image}}" alt="{{act.title}}">
+          </div>
+
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- End Featured -->
+
+<!-- Line-up Link -->
+<div class="grid-x grid-padding-y align-center">
+<div class="small-12 cell text-center">
+  <h3><a href="/line-up/">Ver el cartel entero <svg class="icon icon-arrow_forward"><use xlink:href="/assets/icons/symbol-defs.svg#icon-arrow_forward"></use></svg></a></h3>
+</div>
+</div>
+<!-- End Line-up Link -->
+</section>

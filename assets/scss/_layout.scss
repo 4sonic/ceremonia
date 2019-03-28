@@ -1,0 +1,234 @@
+//  Table of Contents:
+//
+//   1. Global
+//   2. Typography
+//   3. Navigation
+//   4. Excerpt
+//   5. Index
+//   6. Location
+//   7. Event
+//   8. Footer
+
+// 1. Global
+// ---------
+
+@mixin links ($link, $hover) {
+  a {
+    color: $link;
+    &:hover {
+      color: $hover;
+    }
+  }
+}
+
+svg {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+.accordion {
+  margin-bottom: 0;
+}
+
+// 2. Typography
+// -------------
+
+i, cite, em, var, address, dfn {
+  font-style: normal;
+}
+
+.white {
+  color: $white;
+}
+
+// 3. Navigation
+// -------------
+
+.top-bar {
+  border-bottom: 6px solid $primary-color;
+}
+
+.top-bar__logo {
+  letter-spacing: -1px;
+  margin-bottom: 0;
+}
+
+.top-bar__date {
+@include links($white, $black);
+}
+
+.top-bar__socials {
+@include links($white, $black);
+}
+
+
+// 4. Excerpt
+// ----------
+
+.excerpt {
+  background-color: $primary-color;
+  position:relative;
+    &:hover .excerpt__image img {
+    filter: grayscale(1) contrast(1.75);
+    opacity: 0.5;
+    }
+}
+
+.excerpt__title {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0rem;
+  color: $white;
+  z-index: 1;
+}
+
+
+// 5. Index
+// --------
+
+.index {
+  background: url(https://festivalceremonia.com/wp-content/uploads/2017/09/FJG_CEREMONIA_BAckground.jpg);
+  background-repeat:no-repeat;
+  background-position:left bottom, right bottom;
+  background-size: 100%;
+  @include breakpoint(small) {
+  padding-bottom: 20vh;
+  }
+  @include breakpoint(medium) {
+  padding-bottom: 60vh;
+  }
+
+}
+
+.index__gallery {
+  height: 80vh;
+}
+
+.index__gallery-cell {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.index__gallery__text {
+	height: 100%;
+}
+
+.index__gallery__text__inner {
+  @include links($white, $primary-color);
+}
+
+.act-name {
+  text-stroke: red;
+}
+
+
+
+// 6. Location
+// ------------
+
+
+.location {
+  background: url(/uploads/microphone-girl.png), url(/uploads/beer-girl.png);
+  background-repeat:no-repeat;
+  background-position:left bottom, right bottom;
+  background-size: 60%, 50%;
+  @include breakpoint(small) {
+  padding-bottom: 20vh;
+  }
+  @include breakpoint(medium) {
+  padding-bottom: 50vh;
+  }
+}
+
+.location__map {
+  @include breakpoint(small) {
+  height: 70vh;
+  }
+  @include breakpoint(medium) {
+  height: 50vh;
+  }
+}
+
+// 7. Event
+// ---------
+
+.event__title span {
+  color: $white;
+}
+
+.event {
+  .menu a{
+    padding: rem-calc(20 0);
+    .icon {
+      margin-right: rem-calc(20);
+    }
+}
+}
+
+.info {
+  background: url(/uploads/snake.png);
+  background-repeat:no-repeat;
+  background-position: right top;
+  background-size: contain;
+}
+
+.event {
+  background: url(/uploads/bird.png), url(/uploads/plants.png);
+  background-repeat:no-repeat;
+  background-position: right top, left top;
+  background-size: 25%, 25%;
+}
+
+
+.tickets {
+  background: url(/uploads/microphone-girl.png), url(/uploads/beer-girl.png), url(/uploads/top.png);
+  background-repeat:no-repeat;
+  background-position:left bottom, right bottom, center top;
+  background-size: 50%, 50%, contain;
+  @include breakpoint(small) {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  }
+  @include breakpoint(medium) {
+  padding-top: 20vh;
+  padding-bottom: 60vh;
+  }
+}
+
+
+// 8. Footer
+// ----------
+
+footer {
+  color: $secondary-color;
+  @include links($secondary-color, $white);
+  background-color: get-color(primary-background);
+}
+.hero {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  @include links ($white, $black)
+}
+section.hero video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: $black;
+}
